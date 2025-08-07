@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Habit Tracker Pro",
+  "version": "1.1",
+  "description": "Функциональный трекер привычек с визуализацией прогресса, статистикой и напоминаниями",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icons/icon48.png"
+  },
+  "permissions": ["storage", "alarms", "notifications"],
+  "icons": {
+    "48": "icons/icon48.png"
+  },
+  "author": "Habit Tracker Team",
+  "homepage_url": "https://github.com/habit-tracker/extension",
+  "background": {
+    "service_worker": "background.js"
+  }
+}

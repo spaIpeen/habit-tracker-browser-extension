@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="width" content="350">
+  <title>Habit Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header with theme toggle -->
+    <header class="app-header">
+      <h1>📅 Трекер привычек</h1>
+      <button id="theme-toggle" class="theme-toggle" title="Сменить тему" aria-label="Переключить тёмную тему">🌙</button>
+    </header>
+
+    <!-- Statistics section -->
+    <section class="stats-section">
+      <h2>Статистика</h2>
+      <div id="stats-container" class="stats-container">
+        <!-- Stats will be populated by JS -->
+      </div>
+    </section>
+
+    <!-- Habit management section -->
+    <section class="habits-section">
+      <div class="section-header">
+        <h2>Мои привычки</h2>
+        <div class="tools-container">
+          <label for="search-habits" class="visually-hidden">Поиск привычек</label>
+          <input type="text" id="search-habits" class="search-input" placeholder="Поиск..." aria-label="Поиск привычек" />
+          <label for="filter-habits" class="visually-hidden">Фильтр по категории</label>
+          <select id="filter-habits" class="filter-select" aria-label="Фильтр по категории">
+            <option value="all">Все категории</option>
+            <option value="Здоровье">Здоровье</option>
+            <option value="Продуктивность">Продуктивность</option>
+            <option value="Обучение">Обучение</option>
+            <option value="Спорт">Спорт</option>
+            <option value="Другое">Другое</option>
+          </select>
+        </div>
+      </div>
+      
+      <ul id="habit-list" class="habit-list">
+        <!-- Habits will be populated by JS -->
+      </ul>
+    </section>
+
+    <!-- Add new habit section -->
+    <section class="add-habit-section">
+      <h2>Добавить привычку</h2>
+      <form class="add-habit-form" aria-labelledby="add-habit-heading">
+        <label for="new-habit" class="visually-hidden">Название привычки</label>
+        <input type="text" id="new-habit" class="new-habit-input" placeholder="Название привычки" required aria-required="true" />
+        
+        <label for="habit-category" class="visually-hidden">Категория привычки</label>
+        <select id="habit-category" class="habit-category-select" aria-label="Выберите категорию">
+          <!-- Categories will be populated by JS -->
+        </select>
+        
+        <button type="button" id="add-habit" class="add-habit-btn">Добавить</button>
+      </form>
+    </section>
+
+    <!-- Data management section -->
+    <section class="data-section">
+      <h2 id="data-heading">Управление данными</h2>
+      <div class="data-buttons" role="group" aria-labelledby="data-heading">
+        <button id="export-data" class="data-btn" aria-label="Экспортировать данные в файл">Экспорт данных</button>
+        <button id="import-data" class="data-btn" aria-label="Импортировать данные из файла">Импорт данных</button>
+        <input type="file" id="import-file" accept=".json" style="display: none;" aria-hidden="true" />
+      </div>
+    </section>
+
+    <!-- Settings section -->
+    <section class="settings-section">
+      <h2 id="settings-heading">Настройки</h2>
+      <div class="settings-option" role="group" aria-labelledby="settings-heading">
+        <label for="notifications-toggle">Ежедневные напоминания</label>
+        <input type="checkbox" id="notifications-toggle" class="toggle-switch" aria-label="Включить ежедневные напоминания" />
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>Трекер привычек v1.1 • Создавайте полезные привычки каждый день</p>
+    </footer>
+  </div>
+
+  <!-- Notification toast -->
+  <div id="notification" class="notification"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
